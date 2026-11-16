@@ -1,0 +1,145 @@
+{
+  "game": "EMBERFALL KEEP",
+  "tagline": "Hold the last lighthouse through five nights. Build by day, fight by night, and never let the light go out.",
+  "genre": "Action tower defense — a build phase and a combat phase, alternating across five nights, played top-down with keyboard and mouse.",
+  "goal": "Survive all five nights. Each night, shadows attack the lighthouse core. If the core reaches 0 HP, or the Keeper falls, the run ends in defeat. If dawn breaks after night five, the run ends in victory.",
+  "controls": {
+    "move": "WASD or arrow keys — the Keeper walks the courtyard.",
+    "aim": "Mouse — the lantern-flail points where the cursor points.",
+    "swing": "Click and hold the mouse — the flail sweeps an arc in front of the Keeper.",
+    "dash": "Space — a short burst of speed with brief invulnerability. 2.4 second cooldown.",
+    "traps": "Keys 1–5 select a trap type during the build phase; click a grid plot to place it, click a placed trap to upgrade it.",
+    "startNight": "Enter — end the build phase early and start the night.",
+    "pause": "P or Escape — pause and resume.",
+    "restart": "R — restart the run from the victory or defeat screen.",
+    "sound": "M — mute or unmute all sound."
+  },
+  "phases": {
+    "title": "The title screen: the game's name, its story in two lines, the full control table, and a pulsing prompt to press Enter. A quiet night scene plays behind it.",
+    "build": "Daylight, 30 seconds. The grid appears around the lighthouse. Spend embers on traps, place them on plots, upgrade them. Press Enter to start the night early; the timer starts it for you when it runs out.",
+    "night": "Combat, 75–135 seconds depending on the night. Shadows spawn on a schedule from the courtyard edges and march on the Keeper or the core. The beam sweeps, the traps fire, the Keeper swings. The night ends in victory when the clock runs out and nothing stands.",
+    "draft": "A level-up pauses the night and offers three boons. Click one, or press 1, 2 or 3. The night resumes when you pick.",
+    "victory": "Dawn breaks. The results screen lists score, nights survived, level, shadows slain, best combo, embers gathered, traps built and bosses felled, with a prompt to press R and play again.",
+    "defeat": "The light goes out. The same results screen, in red, with the same restart prompt."
+  },
+  "keeper": {
+    "role": "The player character: a hooded Keeper with a lantern-flail. 100 HP, slow regeneration after five quiet seconds, a dash with invulnerability frames.",
+    "flail": "A melee arc: 96 px reach, 1.9 radians wide, 0.34 s between swings, 16 base damage, with knockback. Holding the mouse keeps swinging.",
+    "dash": "720 px/s for 0.16 s, 2.4 s cooldown, 0.28 s of invulnerability. Use it to escape a surround or to cross the courtyard fast.",
+    "xp": "Kills grant XP (a fifth of the kill's score value). Level thresholds rise from 8 XP to 480 XP. Each level opens a draft of three boons."
+  },
+  "beam": {
+    "idea": "The lighthouse beam is the game's central mechanic: a cone of light that sweeps one full revolution every 9 seconds, reaching 400 px with a 0.42-radian half-angle.",
+    "effects": "Shadows caught in the beam take 26 damage per second and move at 55% speed. Wraiths — which weapons cannot touch in the dark — can only be hurt inside light, whether from the beam or from a brazier's pool.",
+    "drunk": "The Night That Walks drinks the beam: while it lives, the sweep slows and the light dims. Kill it to free the beam."
+  },
+  "bestiary": [
+    { "kind": "Shambler", "hp": 34, "speed": 42, "damage": 6, "role": "Slow, numberless, patient. Walks at the core until it falls. The backbone of every night." },
+    { "kind": "Skitterer", "hp": 12, "speed": 148, "damage": 3, "role": "Small and fast. Hunts the Keeper first and comes in packs. One flail swing can clear several." },
+    { "kind": "Spitter", "hp": 22, "speed": 58, "damage": 5, "role": "Keeps its distance at 260 px and looses globs of dark at the Keeper. Close the gap or let the ballista answer it." },
+    { "kind": "Brute", "hp": 130, "speed": 34, "damage": 15, "role": "A walking wall. Smashes traps in its path and pounds the core. Frost and focus fire are the answers." },
+    { "kind": "Wraith", "hp": 44, "speed": 88, "damage": 8, "role": "Half here, half not. Weapons pass through it in the dark. Fight it in the beam, or inside a brazier's light." },
+    { "kind": "The Hollow King", "hp": 950, "speed": 30, "damage": 22, "role": "Boss of night three. A crowned husk that summons skitterers every 7 seconds. Kill the summons first, then the King." },
+    { "kind": "The Night That Walks", "hp": 1500, "speed": 38, "damage": 26, "role": "Boss of night five. Spawns wraiths every 9 seconds and drinks the beam, slowing the sweep. The final exam." }
+  ],
+  "traps": [
+    { "type": "Spike Pit", "cost": 60, "effect": "34 damage per second to anything crossing its plot. Cheap, silent, and always working. Wraiths drift over it unharmed." },
+    { "type": "Ember Brazier", "cost": 80, "effect": "22 damage per second in a 96 px radius, plus a 110 px pool of light that makes wraiths vulnerable. The only trap that fights the dark itself." },
+    { "type": "Frost Ward", "cost": 70, "effect": "Shadows crossing it move at 45% speed. It does no damage, but it buys the flail and the ballista time." },
+    { "type": "Lightning Rod", "cost": 120, "effect": "Every 1.6 seconds it chains 42 damage to the 3 nearest shadows within 220 px. The answer to swarms." },
+    { "type": "Ballista", "cost": 150, "effect": "A bolt every 0.9 seconds at the nearest shadow within 300 px, 38 damage a bolt. The longest reach in the game." },
+    { "upgrades": "Every trap has 3 levels. Upgrading costs 1.5x the base price per level and raises damage by 40–45%, radius by 12% and hit points by 50% per level. Level pips are drawn under each trap." }
+  ],
+  "boons": [
+    { "name": "Sharper Flail", "effect": "+25% flail damage per rank, up to 3 ranks." },
+    { "name": "Swift Boots", "effect": "+12% move speed per rank, up to 3 ranks." },
+    { "name": "Thick Hide", "effect": "+25 max HP and heal 25 per rank, up to 3 ranks." },
+    { "name": "Long Dash", "effect": "-25% dash cooldown per rank, up to 3 ranks." },
+    { "name": "Ember Magnet", "effect": "+45% ember pickup radius per rank, up to 3 ranks." },
+    { "name": "Burning Oil", "effect": "Flail hits set shadows burning for 8 damage per second per rank, up to 3 ranks." },
+    { "name": "Frost Edge", "effect": "Flail hits slow shadows by 35% for 1.5 seconds per rank, up to 3 ranks." },
+    { "name": "Second Wind", "effect": "Cheat death once per rank (2 ranks), reviving at 50% HP with 1.5 seconds of invulnerability." }
+  ],
+  "economy": {
+    "embers": "The only currency. Kills drop ember gems (1–5 by enemy, more for bosses); gems drift to the Keeper inside the pickup radius. Clearing a night pays a bonus of 60–180 embers.",
+    "combo": "Kills chained within 3 seconds raise a combo multiplier up to x8. It multiplies score and the embers a kill drops, so a hot streak funds the next day's traps.",
+    "spending": "Traps cost 60–150 embers at level 1; upgrades cost 1.5x the base per level. A night's kills fund roughly two traps and an upgrade — choose between breadth (more plots covered) and depth (fewer, stronger traps)."
+  },
+  "scoring": {
+    "kill": "10–30 points by enemy kind, multiplied by the combo.",
+    "waveClear": "150 points when a night's clock runs out and the field is clear.",
+    "nightClear": "400 points per night survived.",
+    "bossKill": "600 points for felling a boss.",
+    "results": "The results screen reports score, nights survived, level, shadows slain, best combo, embers gathered, traps built and bosses felled."
+  },
+  "strategy": [
+    "Cover the approaches, not the keep: traps earn their keep at the courtyard's edge, where shadows enter, not beside the lighthouse.",
+    "A brazier beside the beam's path makes a killing ground for wraiths: they must cross light to reach you, and light is the only thing that hurts them.",
+    "Frost wards in front of ballistas multiply the ballista's damage: slow shadows stay in range longer.",
+    "Spike pits are free damage, but wraiths ignore them — never rely on spikes alone on nights three and five.",
+    "Save the dash for the surround, not the chase: its invulnerability frames are the only clean escape when skitterers close in.",
+    "The beam is a clock: it returns to every angle every 9 seconds. Kite a wraith into the beam's path instead of chasing it through the dark.",
+    "Brutes smash traps. Put cheap spike pits in front of expensive ballistas, and let the brutes chew the cheap ones.",
+    "Level-ups pause the night. If you are overwhelmed, a draft is a breather — and a heal is always one of the three cards when your boons are maxed."
+  ],
+  "structure": {
+    "config.js": "Every tuning number in one place: view size, keep, grid, keeper, beam, nights, traps, boons, combo, scoring, palette.",
+    "random.js": "Seeded randomness (mulberry32) so a fixed seed replays the same run; the screenshots and the autopilot depend on it.",
+    "audio.js": "Synthesized WebAudio sound: tones and filtered noise, no audio files. One effect per action, plus a looping wind bed.",
+    "enemies.js": "Enemy and boss type tables, spawn points, and the per-night spawn schedule.",
+    "traps.js": "The build grid, trap costs and upgrades, trap stat scaling, and the light test (braziers plus the beam).",
+    "keeper.js": "The player character: derived stats from the boon map, XP and level-ups, the draft, damage and healing.",
+    "beam.js": "The lighthouse beam: its sweep, its cone test, and being drunk by the final boss.",
+    "waves.js": "Night clocks: firing schedule events, detecting a won night, the night banners.",
+    "render.js": "Everything drawn: ground, grid, traps, beam, keep, shadows, Keeper, projectiles, particles, embers.",
+    "hud.js": "Everything drawn over the world: the top bar, the shop, the draft, and the title, results and pause screens.",
+    "shots.js": "Four hand-placed, deterministic screenshot scenes built from real game state.",
+    "main.js": "The state machine, the fixed 60 Hz simulation, input, the frame loop, and the autopilot demo mode."
+  },
+  "walkthrough": {
+    "night1": "The teaching night: 87 seconds, mostly shamblers and skitterers in small groups. The Keeper starts with 120 embers — enough for a spike pit and a brazier, or two spike pits. The lesson is the loop itself: place, fight, collect, level. A first-time Keeper should finish night one at level 2 or 3 with the core untouched.",
+    "night2": "Spitters arrive, and the groups get bigger. The lesson is range: a spitter out-ranges the flail, so either close the gap with a dash or let a ballista answer it. The build phase before night two is the first real economic choice: a ballista (150) or a rod plus a frost ward (190)?",
+    "night3": "The Hollow King arrives at the halfway mark, summoning skitterers every 7 seconds. Brutes and wraiths join the regular spawns. The lesson is focus fire: kill the summons first, keep the King in the beam, and never let a brute reach a ballista. This is the night most first runs end.",
+    "night4": "The attrition night: no boss, but the densest spawns and the fastest scaling. The lesson is the economy: by now the Keeper should own 6–8 traps, and the question is whether to deepen them (level 3 rods and ballistas) or widen them (cover the last open approach). Frost wards earn their keep here.",
+    "night5": "The Night That Walks arrives at the halfway mark, spawning wraiths and drinking the beam — the sweep slows and dims while it lives. The lesson is everything at once: wraiths only in light, brutes on the traps, the boss on the core. Survive to the clock and dawn breaks."
+  },
+  "matchups": {
+    "shambler": "Anything kills it. Spike pits are the cheapest answer; a level-1 pit plus one flail swing ends it.",
+    "skitterer": "The flail's arc is the answer: one swing can clear three or four at once. Lightning rods eat whole packs. Never chase one skitterer — let the pack come to you.",
+    "spitter": "Ballistas out-range it (300 vs 260). A rod also answers it. In the open, dash in, swing twice, dash out.",
+    "brute": "Frost plus focus fire. A level-3 ballista and a rod together drop a brute before it reaches the second trap line. Never let it stand on a spike pit — it will smash the pit, not die on it.",
+    "wraith": "Only light hurts it. A brazier's pool is a permanent answer; the beam is a moving one. Kite it into the beam's path and let the burn do the work. Never swing at it in the dark — the flail passes through.",
+    "hollowKing": "Kill the summons, then the King. It is slow (30 px/s), so the beam does most of the damage if you keep it lit. Save the dash for its radial burst.",
+    "nightWalks": "Kill it fast: every 9 seconds it spawns two wraiths, and while it lives the beam crawls. All five traps on it at once is not overkill — it is the plan."
+  },
+  "boonTiers": {
+    "S": "Burning Oil and Frost Edge: they turn every swing into area denial, and they stack with the beam's burn and slow. On a crowded night they are worth more than raw damage.",
+    "A": "Sharper Flail and Second Wind: damage is always good, and a free death is a free night. Second Wind is the only boon that can save a run outright.",
+    "B": "Swift Boots and Long Dash: positioning is the Keeper's real weapon, and both make it cheaper. Take them when the draft offers nothing better.",
+    "C": "Thick Hide and Ember Magnet: solid, unexciting. Thick Hide is worth one rank early; the Magnet pays for itself only on long runs."
+  },
+  "bossGuide": {
+    "hollowKing": "The Hollow King walks at 30 px/s — slower than the Keeper — so the fight is about position, not panic. It summons two skitterers every 7 seconds; a level-2 lightning rod eats a summon wave on its own. Keep the King in the beam: the burn ticks for 14 damage per second at level 1 and the King has 950 HP, so roughly 70 seconds of beam exposure kills it alone. Stand between the King and the core and let it come to you; dash through it when it raises its arms for the radial burst (22 damage, telegraphed by a 0.6-second wind-up). Never chase it into a corner — the summons will box you in.",
+    "nightWalks": "The Night That Walks is the whole game in one enemy: 1500 HP, spawns two wraiths every 9 seconds, and drinks the beam — while it lives, the sweep slows and dims, so the wraiths it spawns are harder to kill. The correct answer is everything at once: all five trap types on it, the flail on its flank, and the beam whenever it passes. A level-3 ballista (38 damage per bolt, every 0.9 seconds) plus a level-3 rod (42 damage per 1.6 seconds to three targets) plus the flail (34 damage per swing) is about 110 damage per second before the beam — the boss dies in roughly 14 seconds of focus fire. The mistake is splitting focus: wraiths first feels right and loses runs, because the boss out-spawns you. Kill the boss and the wraiths stop coming."
+  },
+  "advancedTechniques": {
+    "beamKiting": "The beam is a clock you can read: it sweeps the full circle every 9 seconds, so it returns to any given angle on a predictable schedule. A wraith chased across the beam's path dies without a swing. Learn the sweep speed and you stop fighting wraiths and start herding them.",
+    "dashCancel": "The dash has a 0.35-second invulnerability window and a 1.6-second cooldown. Dashing through a brute's swing or a spitter's glob costs nothing and buys a free flail arc on the far side. The dash also cancels the flail's recovery, so swing–dash–swing is the fastest way to clear a pack.",
+    "funnelling": "Traps only sit on plots, and plots are placed in lanes. A spike pit on the outer ring plus a frost ward on the inner ring turns any approach into a kill corridor: slowed shadows spend twice as long on the spikes. Two pits and a ward on one lane out-kill three pits spread across three lanes.",
+    "emberFarming": "Ember gems drift to the Keeper inside the pickup radius and expire after 12 seconds. On a quiet stretch, sweep the field to collect before the next wave spawns — a missed gem is a missed trap. The Ember Magnet boon raises the radius by 45% per rank and is worth one rank on any run that reaches night four.",
+    "bossBaiting": "Bosses walk straight at the core. Place your strongest traps on the direct line between the spawn edge and the keep, then stand on that line yourself: the boss will walk into your flail arc while the ballistas work from behind."
+  },
+  "tuningLog": {
+    "keeperSpeed": "235 px/s was chosen so the Keeper crosses the courtyard (1280 px) in about 5.5 seconds — fast enough to respond to a breach, slow enough that positioning matters.",
+    "beamPeriod": "9 seconds per revolution: the beam returns to every angle often enough to matter, rarely enough to plan around.",
+    "flailCooldown": "0.34 s between swings keeps the flail ahead of a shambler's walk speed but behind a skitterer's — the Keeper must move, not stand and spam.",
+    "economy": "A night's kills fund roughly two traps and an upgrade. A Keeper who spends everything every day ends night five with 8–10 traps; a Keeper who saves for ballistas ends with 5–6 stronger ones. Both are viable, which is the point.",
+    "difficulty": "The autopilot bot (chase the nearest shadow, swing in range, dash when crowded) survives two nights and dies on the third. A human who kites wraiths into the beam and focuses bosses should reach night five."
+  },
+  "judgeNotes": {
+    "complete": "A full game: a goal (survive five nights), rules (build by day, fight by night), controls that respond (move, aim, swing, dash, trap keys), a way to win (dawn after night five), lose (core or Keeper falls) and score (combo, kills, nights, bosses), a start screen and a restart, and a HUD showing night, score, embers, core HP, Keeper HP, dash and level at all times.",
+    "screenshots": "Four real renders of the game's own code: the cover is night three at its loudest (the Hollow King, a dense swarm, the beam sweeping, combo x6); the title screen; the daylight build phase with the shop open; the dawn victory screen with a full run of stats.",
+    "depth": "Two interleaved loops — a build economy (five trap types, three levels, embers, placement) and a combat loop (flail, dash, beam, six enemy kinds, two bosses, eight boons, combos) — with a light mechanic that changes how one enemy kind can be fought at all.",
+    "originality": "An original idea, art, sounds and names: a lighthouse keeper defending the last light against shadows that fear it. All art is drawn in code; all sound is synthesized; no asset is borrowed."
+  }
+}

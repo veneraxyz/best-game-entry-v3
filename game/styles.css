@@ -1,0 +1,40 @@
+/* EMBERFALL KEEP — page chrome. The game itself is drawn on the canvas;
+   this file only centres it on a dark page and styles the control hint. */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #05070f;
+  color: #e8ecf4;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.stage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+}
+
+#game {
+  width: min(1280px, 96vw);
+  height: auto;
+  aspect-ratio: 1280 / 800;
+  background: #0a0e1a;
+  border: 2px solid #232c3d;
+  border-radius: 10px;
+  box-shadow: 0 0 60px rgba(255, 179, 71, 0.12), 0 18px 50px rgba(0, 0, 0, 0.6);
+  cursor: crosshair;
+}
+
+.hint {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #9aa5b8;
+}
